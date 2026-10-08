@@ -7,7 +7,7 @@ const CONFIG = {
   phone: '(385) 480-9747',
   supabase: {                                  // browser-safe values only. NEVER put a service-role key here
     url: 'https://lpuxmodswcbqgcyqvvqa.supabase.co',
-    anonKey: 'PASTE_YOUR_SUPABASE_ANON_KEY_HERE'
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxwdXhtb2Rzd2NicWdjeXF2dnFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0MDQwNTAsImV4cCI6MjEwNjk4MDA1MH0.YYfPmdHElPPasxKbXbqdLk3naLQ5KGWbrdLGFq08pKo'
   },
   hours: { 0: null, 1: [9,17], 2: [9,17], 3: [9,17], 4: [9,17], 5: [9,17], 6: [8,14] }, // Sun closed, Sat 8-2
   services: [
