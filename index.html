@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Green Gator Pest Solutions · Service Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" onerror="document.title='CSS missing: css/styles.css'">
+</head>
+<body>
+<div id="app"></div>
+<dialog id="dlg"></dialog>
+
+<!-- Startup check: shows a readable message instead of a blank page if a file is missing or a script fails -->
+<script>
+  function ggFail(msg) {
+    var a = document.getElementById('app');
+    a.innerHTML = '<div style="font:15px/1.6 system-ui;max-width:560px;margin:60px auto;padding:20px"><h2>Portal could not start</h2><p>' + msg +
+      '</p><p>Check that the folder looks like <code>index.html</code>, <code>css/styles.css</code> and <code>js/*.js</code>, then open the <b>green-gator</b> folder in VS Code and start Live Server from <code>index.html</code>. Press F12 and check Console and Network for details.</p></div>';
+  }
+  window.addEventListener('error', function (e) { if (typeof render !== 'function' || !document.querySelector('#app').innerHTML) ggFail('Script error: ' + e.message); });
+  document.addEventListener('DOMContentLoaded', function () {});
+</script>
+
+<!-- Load order matters: each file builds on the one above (plain scripts, so index.html also works by double-click) -->
+<script src="js/config.js" onerror="ggFail('Could not load <b>js/config.js</b>.')"></script>
+<script src="js/mock-db.js" onerror="ggFail('Could not load <b>js/mock-db.js</b>.')"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase.js" onerror="ggFail('Could not load <b>js/supabase.js</b>.')"></script>
+<script src="js/api.js" onerror="ggFail('Could not load <b>js/api.js</b>.')"></script>
+<script src="js/store.js" onerror="ggFail('Could not load <b>js/store.js</b>.')"></script>
+<script src="js/views.js" onerror="ggFail('Could not load <b>js/views.js</b>.')"></script>
+<script src="js/app.js" onerror="ggFail('Could not load <b>js/app.js</b>.')"></script>
+</body>
+</html>
